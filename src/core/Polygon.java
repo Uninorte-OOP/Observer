@@ -28,4 +28,8 @@ public class Polygon {
         return this.points.get(index);
     }
     
+    public double getPerimeter() {
+        return 0.0;
+    }
+    
 }

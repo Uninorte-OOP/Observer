@@ -19,7 +19,11 @@ public class Multiplier extends Observer {
 
     @Override
     public void notify(int value) {
-        
+        System.out.println("Updated attribute in " + this.observable + ", executing multiplication... result = " + this.multiply(value));
+    }
+    
+    private int multiply(int value) {
+        return this.value * value;
     }
     
 }

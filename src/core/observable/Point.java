@@ -20,6 +20,11 @@ public class Point extends Observable {
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Point(" + x + ", " + y + ")";
+    }
     
     public boolean addObserver(Observer observer) {
         this.observers.add(observer);
@@ -37,10 +42,12 @@ public class Point extends Observable {
 
     public void setX(int x) {
         this.x = x;
+        this.notifyAll(x);
     }
 
     public void setY(int y) {
         this.y = y;
+        this.notifyAll(y);
     }
     
 }

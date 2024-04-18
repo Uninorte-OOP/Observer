@@ -19,7 +19,11 @@ public class Adder extends Observer {
 
     @Override
     public void notify(int value) {
-        
+        System.out.println("Updated attribute in " + this.observable + ", executing addition... result = " + this.add(value));
+    }
+    
+    private int add(int value) {
+        return this.value + value;
     }
     
 }

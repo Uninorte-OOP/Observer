@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package core.observer;
 
 /**
  *
- * @author jdecaro
+ * @author edangulo
  */
 public class Multiplier extends Observer {
     
@@ -17,6 +13,11 @@ public class Multiplier extends Observer {
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return "Multiplier(" + value + ")";
+    }
+    
     @Override
     public void notify(int value) {
         System.out.println("Updated attribute in " + this.observable + ", executing multiplication... result = " + this.multiply(value));

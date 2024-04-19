@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package core.observable;
-
-import core.observer.Observer;
 
 /**
  *
- * @author jdecaro
+ * @author edangulo
  */
 public class Point extends Observable {
     
@@ -24,12 +18,6 @@ public class Point extends Observable {
     @Override
     public String toString() {
         return "Point(" + x + ", " + y + ")";
-    }
-    
-    public boolean addObserver(Observer observer) {
-        this.observers.add(observer);
-        observer.setObservable(this);
-        return true;
     }
 
     public int getX() {

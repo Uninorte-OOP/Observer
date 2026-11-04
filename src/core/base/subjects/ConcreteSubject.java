@@ -23,12 +23,16 @@ public class ConcreteSubject implements Subject {
     
     @Override
     public void attach(Observer observer) {
-        observers.add(observer);
+        if (!observers.contains(observer)) {
+            observers.add(observer);
+        }
     }
 
     @Override
     public void detach(Observer observer) {
-        observers.remove(observer);
+        if (observers.contains(observer)) {
+            observers.remove(observer);
+        }
     }
 
     @Override

@@ -6,6 +6,7 @@ package main;
 
 import core.base.observers.ConcreteObserverA;
 import core.base.observers.ConcreteObserverB;
+import core.base.observers.ConcreteObserverC;
 import core.base.observers.Observer;
 import core.base.subjects.ConcreteSubject;
 
@@ -20,12 +21,20 @@ public class Main {
         
         Observer observerA = new ConcreteObserverA();
         Observer observerB = new ConcreteObserverB();
+        Observer observerC = new ConcreteObserverC();
         
         subject.attach(observerA);
         subject.attach(observerB);
+        subject.attach(observerA);
         
         subject.setState("New State");
         subject.setState("Another State");
+        
+        subject.attach(observerC);
+        subject.setState("State for test");
+        
+        subject.detach(observerB);
+        subject.setState("Remove State");
     }
     
 }
